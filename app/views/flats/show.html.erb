@@ -1,0 +1,50 @@
+<div class="flat-image">
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-body bg-light mb-4">
+        <h1 class="my-4"><%= @flat.name %></h1>
+        <div class="d-flex justify-content-between align-items-center">
+          <span><%= @flat.address %></span>
+          <%= link_to "Edit Flat", edit_flat_path(@flat), class: "btn btn-white border border-primary text-primary my_button" %>
+        </div>
+      </div>
+
+      <div class="card card-body bg-light mb-4">
+        <h2 class="my-4">A bit more about this flat...</h2>
+        <p><%= @flat.description %></p>
+      </div>
+
+      <div class="card card-body bg-light mb-4">
+        <h2 class="my-4">Details</h2>
+        <p>
+          <i class="fa-solid fa-user"></i> <%= @flat.number_of_guests %>
+          <i class="fa-solid fa-euro-sign"></i> <%= @flat.price_per_night %>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card card-body bg-light mb-3">
+        <h3 class="my-4">Book this place!</h3>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">From:</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">To:</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success">Book</button>
+        </div>
+      </div>
+      <div class="card card-body bg-light">
+        <p>Social Links here</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
