@@ -5,6 +5,10 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def find
+    @flat = Flat.where("name LIKE '%garden%'")
+  end
+
   def show
   end
 
