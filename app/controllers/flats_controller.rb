@@ -2,11 +2,12 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Flat.all
-  end
-
-  def find
-    @flat = Flat.where("name LIKE '%garden%'")
+    if params[:search].present? && params[:search][:search].present?
+      search_term = "%#{params[:search][:search].to_s.downcase}%"
+      @flats = Flat.where("LOWER(name) LIKE ? OR LOWER(address) LIKE ?", search_term, search_term)
+    else
+      @flats = Flat.all
+    end
   end
 
   def show

@@ -18,10 +18,11 @@
     <nav class="navbar bg-body-tertiary bg-light">
       <div class="container-fluid">
         <a class="navbar-brand logo link-dark" href="/flats">Simple Airbnb</a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+        <%= simple_form_for :search, url: flats_path, method: :get, html: { class: "d-flex align-items-center" } do |f| %>
+          <%= f.input :search, input_html: { class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } }, label: false, wrapper: false %>
+          <%= f.button :submit, "Search", class: "btn btn-outline-success" %>
+        <% end %>
       </div>
     </nav>
 
